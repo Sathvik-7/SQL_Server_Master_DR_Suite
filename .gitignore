@@ -1,0 +1,11 @@
+# Ignore Database Backups
+/Backups/
+*.bak
+*.trn
+*.mdf
+*.ldf
+*.ndf
+
+# Python ignores
+__pycache__/
+*.pyc
