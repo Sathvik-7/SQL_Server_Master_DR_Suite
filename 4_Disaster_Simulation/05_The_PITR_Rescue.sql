@@ -15,7 +15,7 @@ GO
 -- We must capture all transactions leading up to the disaster. 
 -- NORECOVERY leaves the database in a restoring state.
 BACKUP LOG [EnterpriseSales_Primary] 
-TO DISK = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Primary_TAIL_LOG.trn' 
+TO DISK = 'ES_Primary_TAIL_LOG.trn' 
 WITH NORECOVERY, INIT;
 GO
 
@@ -23,7 +23,7 @@ GO
 -- (Replace <Timestamp> with your actual backup filename timestamp)
 /*
 RESTORE DATABASE [EnterpriseSales_Primary] 
-FROM DISK = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Primary_FULL_<Timestamp>.bak' 
+FROM DISK = 'ES_Primary_FULL_<Timestamp>.bak' 
 WITH NORECOVERY, REPLACE;
 GO
 */
@@ -32,7 +32,7 @@ GO
 -- (If any log backups occurred after the FULL backup, restore them here WITH NORECOVERY)
 /*
 RESTORE LOG [EnterpriseSales_Primary] 
-FROM DISK = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Primary_LOG_<Timestamp>.trn' 
+FROM DISK = 'ES_Primary_LOG_<Timestamp>.trn' 
 WITH NORECOVERY;
 GO
 */
@@ -42,7 +42,7 @@ GO
 -- Replace 'YYYY-MM-DD HH:MM:SS' with the exact safe timestamp BEFORE the disaster struck.
 /*
 RESTORE LOG [EnterpriseSales_Primary] 
-FROM DISK = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Primary_TAIL_LOG.trn' 
+FROM DISK = 'ES_Primary_TAIL_LOG.trn' 
 WITH STOPAT = '2026-03-25 14:04:59', RECOVERY;
 GO
 */
