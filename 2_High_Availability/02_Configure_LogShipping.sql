@@ -14,11 +14,11 @@ GO
 
 /* 
 RESTORE DATABASE [EnterpriseSales_Secondary]
-FROM DISK = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Primary_FULL_<Timestamp>.bak'
+FROM DISK = 'ES_Primary_FULL_<Timestamp>.bak'
 WITH 
-    MOVE 'EnterpriseSales_Primary' TO 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Secondary.mdf',
-    MOVE 'EnterpriseSales_Primary_log' TO 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Secondary_log.ldf',
-    STANDBY = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Secondary_Rollback_Undo.bak';
+    MOVE 'EnterpriseSales_Primary' TO 'ES_Secondary.mdf',
+    MOVE 'EnterpriseSales_Primary_log' TO 'ES_Secondary_log.ldf',
+    STANDBY = 'ES_Secondary_Rollback_Undo.bak';
 GO
 */
 
@@ -26,8 +26,8 @@ GO
 -- This command is what the 'Restore Job' runs every 15 minutes to keep the secondary synchronized.
 /* 
 RESTORE LOG [EnterpriseSales_Secondary]
-FROM DISK = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Primary_LOG_<Timestamp>.trn'
-WITH STANDBY = 'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups\ES_Secondary_Rollback_Undo.bak';
+FROM DISK = 'ES_Primary_LOG_<Timestamp>.trn'
+WITH STANDBY = 'ES_Secondary_Rollback_Undo.bak';
 GO
 */
 
