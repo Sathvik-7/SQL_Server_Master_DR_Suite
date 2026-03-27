@@ -5,7 +5,7 @@ import datetime
 import glob
 
 # Configuration
-SERVER = 'SATHVIK\SQLSERVER_2025'
+SERVER = ''
 DATABASE = 'EnterpriseSales_Primary'
 DRIVER = '{ODBC Driver 17 for SQL Server}'
 BACKUP_DIR = r'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups'
