@@ -8,7 +8,7 @@ import glob
 SERVER = ''
 DATABASE = 'EnterpriseSales_Primary'
 DRIVER = '{ODBC Driver 17 for SQL Server}'
-BACKUP_DIR = r'd:\Database Engineer\SQL_Server_Master_DR_Suite\Backups'
+BACKUP_DIR = r'\Backups'
 
 # Connect to master so we can backup our target database freely
 CONNECTION_STRING = f'DRIVER={DRIVER};SERVER={SERVER};DATABASE={DATABASE};Trusted_Connection=yes;'
