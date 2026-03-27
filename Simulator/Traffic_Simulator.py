@@ -5,7 +5,7 @@ import datetime
 
 # Database Connection Configuration
 # (Change Server name to your actual instance if not using localhost '.')
-SERVER = 'SATHVIK\SQLSERVER_2025'
+SERVER = ''
 DATABASE = 'EnterpriseSales_Primary'
 DRIVER = '{ODBC Driver 17 for SQL Server}' # Adjust if using a different ODBC driver
 
